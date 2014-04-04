@@ -17,7 +17,7 @@ ShortcodeContainer::add('image', function($attributes) {
 	$options = array_merge($defaults, $attributes);
 	$append = array();
 	foreach($options as $key => $val) {
-		$append[] = ' '.$key.'="'.html($val).'"';
+		$append[] = ' '.$key.'="'.get_html($val).'"';
 	}
 	$xhtml = ConfigContainer::get('xtml') ? ' /' : '';
 	return '<img src="'.$image.'"'.implode($append).$xhtml.'>';
